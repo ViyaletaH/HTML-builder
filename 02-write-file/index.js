@@ -22,12 +22,10 @@ const read = readline.createInterface(process.stdin, process.stdout);
 let reply;
 
 read.question('Введите текст', (words) => {
-    reply = words;
+    reply += words;
     if (reply.toLowerCase().trim() === 'exit') {
         read.close()
     } else {
-        // console.log('kiss me goodbye')
-        fs.writeFile('02-write-file/text.txt', reply)
+        fs.writeFile('02-write-file/text.txt', reply);
     }
-})
-
+});
